@@ -21,11 +21,11 @@ $ yarn add morsee
 ```js
 const { encode, decode } = require('morsee');
 
-const encoded = encode('Hello World');
+const encoded = encode('hello world');
 // .... . .-.. .-.. ---     .-- --- .-. .-.. -..
 
-const decoded = decode('.... . .-.. .-.. ---     .-- --- .-. .-.. -..');
-// Hello World
+const decoded = decode('.... . .-.. .-.. --- / .-- --- .-. .-.. -..');
+// hello world
 ```
 
 ## License
