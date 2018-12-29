@@ -19,6 +19,10 @@ describe('Morsee', () => {
     it('should return punctuation chars', () => {
       assert.equal(encode('hi!'), `${toMorse.h} ${toMorse.i} ${toMorse['!']}`)
     })
+
+    it('should return a new line char', () => {
+      assert.equal(encode('h\ni'), `${toMorse.h} ${toMorse['\n']} ${toMorse.i}`)
+    })
   })
 
   describe('to decode', () => {
@@ -36,6 +40,10 @@ describe('Morsee', () => {
 
     it('should return punctuation chars', () => {
       assert.equal(decode('.... .. -.-.--'), 'hi!')
+    })
+
+    it('should return a new line char', () => {
+      assert.equal(decode('.... .-.- ..'), 'h\ni')
     })
   })
 })
