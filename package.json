@@ -1,6 +1,6 @@
 {
   "name": "morsee",
-  "version": "0.1.0",
+  "version": "1.0.1",
   "description": "A simple decoder/encoder for morse code written in javascript",
   "main": "index.js",
   "scripts": {
@@ -23,7 +23,7 @@
     "url": "https://github.com/gabrielfurini/morsee/issues"
   },
   "homepage": "https://github.com/gabrielfurini/morsee#readme",
-  "dependencies": {
+  "devDependencies": {
     "eslint": "^5.11.1",
     "eslint-config-airbnb-base": "^13.1.0",
     "eslint-plugin-import": "^2.14.0",
