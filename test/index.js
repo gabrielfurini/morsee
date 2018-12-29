@@ -13,7 +13,11 @@ describe('Morsee', () => {
     })
 
     it('should return a sentence, with words splitted by slashes', () => {
-      assert.equal(encode('hi friend'), `${toMorse.h} ${toMorse.i} / ${toMorse.f} ${toMorse.r} ${toMorse.i} ${toMorse.e} ${toMorse.n} ${toMorse.d}`)
+      assert.equal(encode('hi friend'), `${toMorse.h} ${toMorse.i} ${toMorse[' ']} ${toMorse.f} ${toMorse.r} ${toMorse.i} ${toMorse.e} ${toMorse.n} ${toMorse.d}`)
+    })
+
+    it('should return punctuation chars', () => {
+      assert.equal(encode('hi!'), `${toMorse.h} ${toMorse.i} ${toMorse['!']}`)
     })
   })
 
@@ -28,6 +32,10 @@ describe('Morsee', () => {
 
     it('should return a sentence, with words splitted by blank spaces', () => {
       assert.equal(decode('.... .. / ..-. .-. .. . -. -..'), 'hi friend')
+    })
+
+    it('should return punctuation chars', () => {
+      assert.equal(decode('.... .. -.-.--'), 'hi!')
     })
   })
 })
