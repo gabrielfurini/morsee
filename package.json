@@ -4,7 +4,8 @@
   "description": "A simple decoder/encoder for morse code written in javascript",
   "main": "index.js",
   "scripts": {
-    "test": "mocha"
+    "test": "mocha",
+    "coverage": "istanbul cover _mocha"
   },
   "repository": {
     "type": "git",
@@ -27,6 +28,7 @@
     "eslint": "^5.11.1",
     "eslint-config-airbnb-base": "^13.1.0",
     "eslint-plugin-import": "^2.14.0",
+    "istanbul": "^1.0.0-alpha.2",
     "mocha": "^5.2.0"
   }
 }

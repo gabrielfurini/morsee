@@ -1,0 +1,9 @@
+language: node_js
+node_js:
+  - v10
+before_install:
+  - npm install -g codecov
+script:
+  - npm run coverage
+after_success:
+  - codecov
