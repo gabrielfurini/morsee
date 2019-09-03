@@ -1,6 +1,6 @@
 {
   "name": "morsee",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "A simple decoder/encoder for morse code written in javascript",
   "main": "index.js",
   "scripts": {
