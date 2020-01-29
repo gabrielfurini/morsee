@@ -25,9 +25,9 @@
   },
   "homepage": "https://github.com/gabrielfurini/morsee#readme",
   "devDependencies": {
-    "eslint": "^5.11.1",
-    "eslint-config-airbnb-base": "^13.1.0",
-    "eslint-plugin-import": "^2.14.0",
+    "eslint": "^5.16.0",
+    "eslint-config-airbnb-base": "^13.2.0",
+    "eslint-plugin-import": "^2.20.0",
     "istanbul": "^1.0.0-alpha.2",
     "mocha": "^5.2.0"
   }
