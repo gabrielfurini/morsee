@@ -1,13 +1,11 @@
 module.exports = {
-  "extends": "airbnb-base",
-  "env": {
-    "node": true,
-    "mocha": true
+  extends: ['airbnb-base', 'prettier'],
+  env: {
+    node: true,
+    mocha: true,
   },
-  "rules": {
-    "semi": [
-      2,
-      "never"
-    ],
-  }
-};
+  rules: {
+    semi: [2, 'never'],
+    quotes: [2, 'single', { avoidEscape: true }],
+  },
+}
