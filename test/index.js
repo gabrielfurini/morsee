@@ -13,15 +13,24 @@ describe('Morsee', () => {
     })
 
     it('should return a sentence, with words splitted by slashes', () => {
-      assert.strictEqual(encode('hi friend'), `${toMorse.h} ${toMorse.i} ${toMorse[' ']} ${toMorse.f} ${toMorse.r} ${toMorse.i} ${toMorse.e} ${toMorse.n} ${toMorse.d}`)
+      assert.strictEqual(
+        encode('hi friend'),
+        `${toMorse.h} ${toMorse.i} ${toMorse[' ']} ${toMorse.f} ${toMorse.r} ${toMorse.i} ${toMorse.e} ${toMorse.n} ${toMorse.d}`
+      )
     })
 
     it('should return punctuation chars', () => {
-      assert.strictEqual(encode('hi!'), `${toMorse.h} ${toMorse.i} ${toMorse['!']}`)
+      assert.strictEqual(
+        encode('hi!'),
+        `${toMorse.h} ${toMorse.i} ${toMorse['!']}`
+      )
     })
 
     it('should return a new line char', () => {
-      assert.strictEqual(encode('h\ni'), `${toMorse.h} ${toMorse['\n']} ${toMorse.i}`)
+      assert.strictEqual(
+        encode('h\ni'),
+        `${toMorse.h} ${toMorse['\n']} ${toMorse.i}`
+      )
     })
   })
 
