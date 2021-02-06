@@ -25,16 +25,9 @@ const letters = {
   x: '-..-',
   y: '-.--',
   z: '--..',
-  ä: '.-.-',
-  á: '.--.-',
-  å: '.--.-',
-  é: '.-..',
-  ñ: '--.--',
-  ö: '--.',
-  ü: '.--',
 }
 
-const digits = {
+const numbers = {
   0: '-----',
   1: '.----',
   2: '..---',
@@ -47,34 +40,78 @@ const digits = {
   9: '----.',
 }
 
-const specials = {
-  ' ': '/',
-  '\n': '.-.-',
+const nonEnglish = {
+  á: '.--.-',
+  à: '·−−·−', // shared by à, å
+  ä: '·−·−', // shared by ä, æ, ą
+  å: '·−−·−', // shared by à, å
+  ą: '·−·−', // shared by ä, æ, ą
+  æ: '·−·−', // shared by ä, æ, ą
+  ć: '−·−··', // shared by ć, ĉ, ç
+  ĉ: '−·−··', // shared by ć, ĉ, ç
+  ç: '−·−··', // shared by ć, ĉ, ç
+  đ: '··−··', // shared by đ, é, ę
+  ð: '··−−·',
+  é: '··−··', // shared by đ, é, ę
+  è: '·−··−', // shared by è, ł
+  ę: '··−··', // shared by đ, é, ę
+  ĝ: '−−·−·',
+  ĥ: '−−−−', // shared by ĥ, š
+  ĵ: '·−−−·',
+  ł: '·−··−', // shared by è, ł
+  ń: '−−·−−', // shared by ń, ñ
+  ñ: '−−·−−', // shared by ń, ñ
+  ó: '−−−·', // shared by ó, ö, ø
+  ö: '−−−·', // shared by ó, ö, ø
+  ø: '−−−·', // shared by ó, ö, ø
+  ś: '···−···',
+  ŝ: '···−·',
+  š: '−−−−', // shared by ĥ, š
+  þ: '·−−··',
+  ü: '··−−', // shared by ü, ŭ
+  ŭ: '··−−', // shared by ü, ŭ
+  ź: '−−··−·',
+  ż: '−−··−',
+}
+
+const punctuation = {
   '&': '.-...',
-  '\'': '.----.',
+  "'": '.----.',
   '@': '.--.-.',
+  $: '···−··−',
   ')': '-.--.-',
   '(': '-.--.',
   ':': '---...',
   ',': '--..--',
+  ';': '−·−·−·',
   '=': '-...-',
   '!': '-.-.--',
   '.': '.-.-.-',
   '-': '-....-',
+  _: '··−−·−',
   '+': '.-.-.',
   '"': '.-..-.',
   '?': '..--..',
   '/': '-..-.',
 }
 
-const toMorse = {
-  ...letters,
-  ...digits,
-  ...specials,
+const extra = {
+  ' ': '/',
+  '\n': '.-.-',
 }
 
-const fromMorse = Object.keys(toMorse)
-  .reduce((obj, char) => ({ ...obj, [toMorse[char]]: char }), {})
+const toMorse = {
+  ...letters,
+  ...numbers,
+  ...nonEnglish,
+  ...punctuation,
+  ...extra,
+}
+
+const fromMorse = Object.keys(toMorse).reduce(
+  (obj, char) => ({ ...obj, [toMorse[char]]: char }),
+  {}
+)
 
 module.exports = {
   toMorse,
