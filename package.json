@@ -3,6 +3,7 @@
   "version": "1.0.9",
   "description": "A simple decoder/encoder for morse code written in javascript",
   "main": "index.js",
+  "types": "index.d.ts",
   "scripts": {
     "test": "mocha",
     "coverage": "istanbul cover _mocha"
